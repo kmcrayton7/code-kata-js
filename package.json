@@ -1,0 +1,32 @@
+{
+  "name": "code-kata-js",
+  "version": "1.0.0",
+  "description": "JavaScript code kata jump start project",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:mocha-babel specs/**/*.js",
+		"lint": "eslint ./**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrew-codes/code-kata-js.git"
+  },
+  "keywords": [
+    "starter",
+    "code",
+    "kata"
+  ],
+  "author": "Andrew Smith <andrew@WeAreSoftwareCraftsmen.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrew-codes/code-kata-js/issues"
+  },
+  "homepage": "https://github.com/andrew-codes/code-kata-js#readme",
+  "devDependencies": {
+    "babel": "^5.8.29",
+    "babel-runtime": "^5.8.29",
+    "chai": "^3.4.0",
+    "mocha": "^2.3.3",
+    "mocha-babel": "^3.0.0"
+  }
+}

@@ -4,8 +4,44 @@ export function getWinningHand(hands) {
 //			
 //		});
 //	})
-//	['2H', 'AS'] => [1, 1];
-	throw new Error('Not Implemented');
+//	['2H', 'AS'] => [{ value: 1, suite: 'H'} ...];
+
+	//hands ===
+	// [
+	// ['2H', 'KD', 'JS', '10C', '5D'],
+	// ['2S', '5S', 'JD', '10S', 'AS'],
+	// [...]
+	// ]
+	var transformedHands = hands.map(transformCards);
+
+	// what we want:
+	//[
+	//		[
+	//			{
+	//			value: 2,
+	//			suite: 'H'
+	//		},
+	//			{
+	//				value: 5,
+	//				suite: 'D'
+	//			}
+	//		],
+	//		[{
+	//			value: 2,
+	//			suite: 'S'
+	//		}]
+	//]
+	var highestCardInHand = transformedHands.reduce(reduceHighestHand, 0);
+
+}
+
+function reduceHighestHand(currentHighestHandValue, hand){
+	handValue = hand.reduce(reduceHighestCardValue, 0);
+	return currentHighestHandValue >= handValue ? currentHighestHandValue : handValue;
+}
+
+function reduceHighestCardValue(currentHighestValue, card){
+	return currentHighestValue >= card.value ? currentHighestValue : card.value;
 }
 	
 export function transformCards(cards){
